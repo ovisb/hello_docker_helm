@@ -7,7 +7,7 @@ namespace: dev
 
 image:
   repository: devregistry0001.azurecr.io/hello_docker
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: latest
 
 backend:
