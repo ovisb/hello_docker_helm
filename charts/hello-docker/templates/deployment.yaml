@@ -25,4 +25,4 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.nginx.container.port }}
+              containerPort: {{ .Values.backend.container.port }}

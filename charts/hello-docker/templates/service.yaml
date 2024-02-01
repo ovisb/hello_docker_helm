@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "hello-docker.fullname" . }}
+  name: {{ include "hello-docker.fullname" . }}-{{ "public" }}
   namespace: {{ .Values.namespace }}
 spec:
   selector:
     app: {{ include "hello-docker.name" . }}
+  type: {{ .Values.serviceExternal.type }}
   ports:
-    - name: http
-      protocol: TCP
-      port: {{ .Values.serviceInternal.servicePort }}
-      targetPort: {{ .Values.serviceInternal.backendPort }}
+  - port: {{ .Values.serviceExternal.servicePort }}
+    targetPort: {{ .Values.backend.container.port }}
