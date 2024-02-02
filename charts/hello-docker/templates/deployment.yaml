@@ -22,3 +22,22 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.backend.container.port }}
+          volumeMounts:
+            - name: aks-vault-secrets
+              mountPath: "/mnt/aks-vault-secrets"
+              readOnly: true
+          env:
+            {{ range $envVar, $secretName := .Values.envSecrets }}
+            - name: {{ $envVar }}
+              valueFrom:
+                secretKeyRef:
+                  name: aks-vault-secret
+                  key: {{ $secretName }}
+            {{ end }}
+      volumes:
+        - name: aks-vault-secrets
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "aks-vault"
