@@ -1,6 +1,6 @@
 # Hello Docker Helm chart
 
-Purpose of this helm chart is to help me deploy sample .NET hello-docker app to Kubernetes, and to practice some Azure.
+Purpose of this helm chart is to help me deploy sample .NET [hello-docker](https://github.com/ovisb/hello_docker) app to Kubernetes, and to practice some Azure.
 
 ## Pre requirements
 
