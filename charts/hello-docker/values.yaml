@@ -5,16 +5,13 @@ replicaCount: 2
 namespace: dev
 
 image:
-  repository: devregistry0001.azurecr.io/hello_docker
+  repository: demodevregistry0001.azurecr.io/hello_docker
   pullPolicy: Always
   tag: latest
 
 backend:
   container:
     port: 8080
-
-imagePullSecrets:
-  - name: acr-auth
 
 serviceExternal:
   type: LoadBalancer
