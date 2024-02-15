@@ -25,4 +25,4 @@ helm delete 'hello-docker'
 ```
 
 ## Integration with ArgoCD
-You can check my other repo in the [argocd](https://github.com/ovisb/azure-terraform-v1/tree/main/terraform/argocd) folder.
+You can check my other repo in the [argocd](https://github.com/ovisb/azure-terraform-v1/tree/main/k8s/argocd) folder.
